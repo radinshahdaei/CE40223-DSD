@@ -1,0 +1,129 @@
+$date
+	Sun May  5 19:28:28 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_bidirectional_bus_gate $end
+$var wire 8 ! bi_data [7:0] $end
+$var wire 8 " data_out_2 [7:0] $end
+$var wire 8 # data_out_1 [7:0] $end
+$var parameter 32 $ N $end
+$var reg 8 % data_in_1 [7:0] $end
+$var reg 8 & data_in_2 [7:0] $end
+$var reg 1 ' oe_1 $end
+$var reg 1 ( oe_2 $end
+$scope module uut $end
+$var wire 8 ) bi_data [7:0] $end
+$var wire 8 * data_in_1 [7:0] $end
+$var wire 8 + data_in_2 [7:0] $end
+$var wire 1 ' oe_1 $end
+$var wire 1 ( oe_2 $end
+$var wire 8 , data_out_2 [7:0] $end
+$var wire 8 - data_out_1 [7:0] $end
+$var parameter 32 . N $end
+$scope begin genblk1[0] $end
+$var parameter 2 / i $end
+$upscope $end
+$scope begin genblk1[1] $end
+$var parameter 2 0 i $end
+$upscope $end
+$scope begin genblk1[2] $end
+$var parameter 3 1 i $end
+$upscope $end
+$scope begin genblk1[3] $end
+$var parameter 3 2 i $end
+$upscope $end
+$scope begin genblk1[4] $end
+$var parameter 4 3 i $end
+$upscope $end
+$scope begin genblk1[5] $end
+$var parameter 4 4 i $end
+$upscope $end
+$scope begin genblk1[6] $end
+$var parameter 4 5 i $end
+$upscope $end
+$scope begin genblk1[7] $end
+$var parameter 4 6 i $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b111 6
+b110 5
+b101 4
+b100 3
+b11 2
+b10 1
+b1 0
+b0 /
+b1000 .
+b1000 $
+$end
+#0
+$dumpvars
+bx -
+bx ,
+b1010101 +
+b10101010 *
+bx )
+0(
+0'
+b1010101 &
+b10101010 %
+bx #
+bx "
+bx !
+$end
+#6
+bz !
+bz )
+bz #
+bz -
+bz "
+bz ,
+#10
+1'
+#16
+bz0z0z0z0 !
+bz0z0z0z0 )
+bx "
+bx ,
+#17
+b10101010 !
+b10101010 )
+#20
+1(
+0'
+#26
+bz0z0z0z0 #
+bz0z0z0z0 -
+b0z0z0z0z !
+b0z0z0z0z )
+bz "
+bz ,
+#27
+b1010101 !
+b1010101 )
+#30
+1'
+#32
+b0 #
+b0 -
+#34
+b1010101 #
+b1010101 -
+#36
+b0x0x0x0x !
+b0x0x0x0x )
+b0z0z0z0z "
+b0z0z0z0z ,
+#37
+bx !
+bx )
+#40

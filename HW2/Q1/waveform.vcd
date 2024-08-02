@@ -1,0 +1,77 @@
+$date
+	Sun May  5 18:56:20 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_bidirectional_bus $end
+$var wire 8 ! data_out_2 [7:0] $end
+$var wire 8 " data_out_1 [7:0] $end
+$var wire 8 # bi_data [7:0] $end
+$var parameter 32 $ N $end
+$var reg 8 % data_in_1 [7:0] $end
+$var reg 8 & data_in_2 [7:0] $end
+$var reg 1 ' oe_1 $end
+$var reg 1 ( oe_2 $end
+$scope module uut $end
+$var wire 8 ) data_in_1 [7:0] $end
+$var wire 8 * data_in_2 [7:0] $end
+$var wire 1 ' oe_1 $end
+$var wire 1 ( oe_2 $end
+$var wire 8 + data_out_2 [7:0] $end
+$var wire 8 , data_out_1 [7:0] $end
+$var wire 8 - bi_data [7:0] $end
+$var parameter 32 . N $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000 .
+b1000 $
+$end
+#0
+$dumpvars
+bz -
+bz ,
+bz +
+b1010101 *
+b10101010 )
+0(
+0'
+b1010101 &
+b10101010 %
+bz #
+bz "
+bz !
+$end
+#10
+b10101010 !
+b10101010 +
+b10101010 #
+b10101010 -
+1'
+#20
+bz !
+bz +
+bz #
+bz -
+bz "
+bz ,
+1(
+#30
+b1010101 "
+b1010101 ,
+b1010101 #
+b1010101 -
+0'
+#40
+bz #
+bz -
+bz "
+bz ,
+0(
+#50

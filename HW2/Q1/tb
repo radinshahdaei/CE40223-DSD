@@ -1,0 +1,97 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x124e0a200 .scope module, "tb_bidirectional_bus" "tb_bidirectional_bus" 2 3;
+ .timescale 0 0;
+P_0x124e0a100 .param/l "N" 0 2 6, +C4<00000000000000000000000000001000>;
+v0x124e26b10_0 .net "bi_data", 7 0, L_0x124e274e0;  1 drivers
+v0x124e26be0_0 .var "data_in_1", 7 0;
+v0x124e26c70_0 .var "data_in_2", 7 0;
+v0x124e26d20_0 .net "data_out_1", 7 0, L_0x124e27640;  1 drivers
+v0x124e26dd0_0 .net "data_out_2", 7 0, L_0x124e27750;  1 drivers
+v0x124e26ea0_0 .var "oe_1", 0 0;
+v0x124e26f50_0 .var "oe_2", 0 0;
+S_0x124e0a370 .scope module, "uut" "bidirectional_bus" 2 18, 3 1 0, S_0x124e0a200;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "data_in_1";
+    .port_info 1 /INPUT 8 "data_in_2";
+    .port_info 2 /INPUT 1 "oe_1";
+    .port_info 3 /INPUT 1 "oe_2";
+    .port_info 4 /OUTPUT 8 "data_out_1";
+    .port_info 5 /OUTPUT 8 "data_out_2";
+    .port_info 6 /INOUT 8 "bi_data";
+P_0x124e0a960 .param/l "N" 0 3 2, +C4<00000000000000000000000000001000>;
+L_0x124e272d0 .functor XOR 1, v0x124e26ea0_0, L_0x124e271b0, C4<0>, C4<0>;
+v0x124e12e80_0 .net *"_ivl_0", 31 0, L_0x124e27000;  1 drivers
+o0x128040040 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v0x124e26050_0 name=_ivl_10
+v0x124e260f0_0 .net *"_ivl_12", 7 0, L_0x124e273c0;  1 drivers
+o0x1280400a0 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v0x124e26180_0 name=_ivl_16
+o0x1280400d0 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v0x124e26210_0 name=_ivl_20
+L_0x128078010 .functor BUFT 1, C4<0000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x124e262e0_0 .net *"_ivl_3", 30 0, L_0x128078010;  1 drivers
+L_0x128078058 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v0x124e26390_0 .net/2u *"_ivl_4", 31 0, L_0x128078058;  1 drivers
+v0x124e26440_0 .net *"_ivl_6", 0 0, L_0x124e271b0;  1 drivers
+v0x124e264e0_0 .net *"_ivl_8", 0 0, L_0x124e272d0;  1 drivers
+v0x124e265f0_0 .net "bi_data", 7 0, L_0x124e274e0;  alias, 1 drivers
+v0x124e266a0_0 .net "data_in_1", 7 0, v0x124e26be0_0;  1 drivers
+v0x124e26750_0 .net "data_in_2", 7 0, v0x124e26c70_0;  1 drivers
+v0x124e26800_0 .net "data_out_1", 7 0, L_0x124e27640;  alias, 1 drivers
+v0x124e268b0_0 .net "data_out_2", 7 0, L_0x124e27750;  alias, 1 drivers
+v0x124e26960_0 .net "oe_1", 0 0, v0x124e26ea0_0;  1 drivers
+v0x124e26a00_0 .net "oe_2", 0 0, v0x124e26f50_0;  1 drivers
+L_0x124e27000 .concat [ 1 31 0 0], v0x124e26f50_0, L_0x128078010;
+L_0x124e271b0 .cmp/eq 32, L_0x124e27000, L_0x128078058;
+L_0x124e273c0 .functor MUXZ 8, v0x124e26c70_0, v0x124e26be0_0, v0x124e26ea0_0, C4<>;
+L_0x124e274e0 .functor MUXZ 8, L_0x124e273c0, o0x128040040, L_0x124e272d0, C4<>;
+L_0x124e27640 .functor MUXZ 8, o0x1280400a0, L_0x124e274e0, v0x124e26f50_0, C4<>;
+L_0x124e27750 .functor MUXZ 8, o0x1280400d0, L_0x124e274e0, v0x124e26ea0_0, C4<>;
+    .scope S_0x124e0a200;
+T_0 ;
+    %vpi_call 2 29 "$dumpfile", "waveform.vcd" {0 0 0};
+    %vpi_call 2 30 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x124e0a200 {0 0 0};
+    %pushi/vec4 170, 0, 8;
+    %store/vec4 v0x124e26be0_0, 0, 8;
+    %pushi/vec4 85, 0, 8;
+    %store/vec4 v0x124e26c70_0, 0, 8;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x124e26ea0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x124e26f50_0, 0, 1;
+    %vpi_call 2 38 "$display", "Time\011OE1\011OE2\011BiData\011Out1\011Out2" {0 0 0};
+    %delay 10, 0;
+    %vpi_call 2 44 "$display", "%0t\011%b\011%b\011%h\011%h\011%h", $time, v0x124e26ea0_0, v0x124e26f50_0, v0x124e26b10_0, v0x124e26d20_0, v0x124e26dd0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x124e26ea0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 49 "$display", "%0t\011%b\011%b\011%h\011%h\011%h", $time, v0x124e26ea0_0, v0x124e26f50_0, v0x124e26b10_0, v0x124e26d20_0, v0x124e26dd0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x124e26f50_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 54 "$display", "%0t\011%b\011%b\011%h\011%h\011%h", $time, v0x124e26ea0_0, v0x124e26f50_0, v0x124e26b10_0, v0x124e26d20_0, v0x124e26dd0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x124e26ea0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 59 "$display", "%0t\011%b\011%b\011%h\011%h\011%h", $time, v0x124e26ea0_0, v0x124e26f50_0, v0x124e26b10_0, v0x124e26d20_0, v0x124e26dd0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x124e26f50_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 64 "$display", "%0t\011%b\011%b\011%h\011%h\011%h", $time, v0x124e26ea0_0, v0x124e26f50_0, v0x124e26b10_0, v0x124e26d20_0, v0x124e26dd0_0 {0 0 0};
+    %vpi_call 2 67 "$stop" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_bidirectional_bus.v";
+    "./bidirectional_bus.v";

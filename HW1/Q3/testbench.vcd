@@ -1,0 +1,91 @@
+$date
+	Thu Apr 11 23:26:36 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 16 ! p [15:0] $end
+$var parameter 32 " width $end
+$var reg 8 # x [7:0] $end
+$var reg 8 $ y [7:0] $end
+$scope module multiplier $end
+$var wire 16 % p [15:0] $end
+$var wire 8 & x [7:0] $end
+$var wire 8 ' y [7:0] $end
+$var wire 9 ( inv_x [8:0] $end
+$var parameter 32 ) N $end
+$var parameter 32 * width $end
+$var reg 16 + prod [15:0] $end
+$var integer 32 , ii [31:0] $end
+$var integer 32 - kk [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000 *
+b100 )
+b1000 "
+$end
+#0
+$dumpvars
+b100 -
+b11 ,
+b1010 +
+b111111110 (
+b101 '
+b10 &
+b1010 %
+b101 $
+b10 #
+b1010 !
+$end
+#10
+b111111101 (
+b1111111111001101 !
+b1111111111001101 %
+b1111111111001101 +
+b11 ,
+b100 -
+b11101111 $
+b11101111 '
+b11 #
+b11 &
+#20
+b111101001 (
+b1111111111101001 !
+b1111111111101001 %
+b1111111111101001 +
+b11 ,
+b100 -
+b11111111 $
+b11111111 '
+b10111 #
+b10111 &
+#30
+b111110100 (
+b10010000 !
+b10010000 %
+b10010000 +
+b11 ,
+b100 -
+b1100 $
+b1100 '
+b1100 #
+b1100 &
+#40
+b0 (
+b0 !
+b0 %
+b0 +
+b11 ,
+b100 -
+b1 $
+b1 '
+b0 #
+b0 &
+#50
